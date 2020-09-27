@@ -5,8 +5,8 @@ ec2 = boto3.resource('ec2')
 def lambda_handler(event, context):
     filter = [
         {
-            'Name': 'tag:type'
-            'values': ['scheduled']
+            'Name': 'tag:Type'
+            'values': ['Scheduled']
         }
      ]
     instances = ec2.instances.filter(Filters=filter)
