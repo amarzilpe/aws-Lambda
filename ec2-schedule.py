@@ -8,7 +8,7 @@ def lambda_handler(event, context):
             'Name': 'tag:type'
             'values': ['scheduled']
         }
-    ]
+     ]
     instances = ec2.instances.filter(Filters=filter)
     for instance in instances:
         instance.start()
