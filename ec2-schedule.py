@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     filter = [
         {
             'Name': 'tag:Type'
-            'values': ['Scheduled']
+            'Values': ['Scheduled']
         }
      ]
     instances = ec2.instances.filter(Filters=filter)
