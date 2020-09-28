@@ -13,3 +13,14 @@ def lambda_handler(event, context):
     for instance in instances:
         instance.start()
     return "successed"
+#Fuction of stop state
+    filter = [
+        {
+            'Name': 'tag:Type',
+            'Values':['Scheduled']
+        }
+     ]
+    instances = ec2.instances.filter(Filters=filter)
+    for instance in instances:
+        instance.stop()
+    return "successed"
